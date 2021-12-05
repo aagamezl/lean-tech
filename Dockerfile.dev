@@ -1,0 +1,15 @@
+FROM node:lts
+
+# Create app directory
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+
+# Run npm and install modules
+RUN npm i
+
+# Expose application port
+EXPOSE 3000
+
+# Run start command
+CMD ["npm", "run", "start:dev"]
